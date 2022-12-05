@@ -25,9 +25,9 @@ module Connectivity
 
   def offline!
     self.state = "offline"
-    self.last_visited_at = Time.zone.now
+    self.last_vistited_at = Time.zone.now
     if save
-      ActionCable.server.broadcast("events:#{app.key}",
+      ActionCable.server.boradcast("events:#{app.key}",
                                   { type: "presence" ,
                                     data: formatted_user})
     end
