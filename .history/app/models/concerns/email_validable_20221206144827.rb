@@ -1,6 +1,6 @@
 require "mail"
 
-module EmailVaildable
+module EmailValidable
   extend ActiveSupport::Concern
 
   class EmailValidator < ActiveModel::EachValidator
