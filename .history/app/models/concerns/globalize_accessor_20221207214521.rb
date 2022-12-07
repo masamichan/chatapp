@@ -57,6 +57,6 @@ module GlobalizeAccessors
       end
     end
 
-    if respond_to?(:accessible_attributes) && 
+    if respond_to?()
   end
 end
