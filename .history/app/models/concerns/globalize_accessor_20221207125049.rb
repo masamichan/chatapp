@@ -25,7 +25,7 @@ module GlobalizeAccessors
     "#{attr_name}_#{local.to_s.underscore}"
   end
 
-  def self.define_accessors(attr_name, locale)
+  def self.define_accessor(attr_name, locale)
     define_getter(attr_name, locale)
     define_setter(attr_name, locale)
   end
@@ -34,9 +34,5 @@ module GlobalizeAccessors
     define_method licalized_attr_name_for(attr_name, locale) do
       globalize.stash.contains?(local,attr_name) ? globalize.send(:fetch_stash, local. attr_name) : globalize.send(:fetch_attribute, locale, attr_name)
     end
-  end
-
-  def self.define_setter(attr_name, locale)
-    
   end
 end
