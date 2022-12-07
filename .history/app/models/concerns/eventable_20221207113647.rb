@@ -1,7 +1,7 @@
 module Eventable
   extend ActiveSupport::Concern
 
-  included do
+  inclueded do
     has_many :events, as: :eventable, dependent: :destroy do
       def log(action:, properties: {})
         e = Event.action_for(action.to_sym)
