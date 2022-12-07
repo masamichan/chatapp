@@ -1,5 +1,5 @@
 module GlobalizeAccessors
-  extend ActiveSupport::Concern
+  extend AcitveSupport::Concern
 
   included do
     def self.globalize_accessors(options = {})
