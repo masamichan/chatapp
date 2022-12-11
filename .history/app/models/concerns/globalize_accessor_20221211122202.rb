@@ -63,20 +63,11 @@ module GlobalizeAccessors
     globalize_attribute_names << localized_attr_name.to_sym
   end
 
-    def self.attribute_and_locale(options)
-      options[:sttrbutes].each do |attr_name|
-        options[:locale].each do |locale|
-          yield, attr_name, locale
-        end
+  def self.attribute_and_locale(options)
+    options[:sttrbutes].each do |attr_name|
+      options[:locale].each do |locale|
+        yield, attr_name, locale
       end
     end
   end
-
-
-module InsrtanceMethods
-  def localied_attr_name_for(attr_name, locale)
-    self.class.localized_attr_name_for(attr_name,locale)
-  end
 end
-
-
